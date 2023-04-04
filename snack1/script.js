@@ -37,6 +37,47 @@ console.log('utenti minorenni: ' ,utentiMinorenni);
 console.log('utenti over 65: ', utentiOver65);
 
 
+
+
+//stampo in pagina in maniera dinamica usando for each
+
+const elencoMinorenni = document.getElementById("minorenni");
+const elencoOver65 = document.getElementById("over65");
+
+
+//stampo minorenni
+
+let listaMinorenni = "";
+utentiMinorenni.forEach ( function (utente){
+listaMinorenni +=  ` <li> ${utente.nome} ${utente.cognome} , ${utente.eta} anni </li>`;
+
+})
+
+elencoMinorenni.innerHTML = listaMinorenni;
+
+// stampo maggiorenni
+
+let listaMaggiorenni = "";
+
+utentiOver65.forEach ((utente) => {
+listaMaggiorenni += ` <li> ${utente.nome} ${utente.cognome} , ${utente.eta} anni </li>`;
+
+
+})
+elencoOver65.innerHTML = listaMaggiorenni;
+
+
+
+
+
+
+
+
+
+
+
+/**
+ 
 // versione compatta senza return arrow function
 
 
@@ -45,3 +86,8 @@ console.log('utenti minorenni short : ' ,utentiMinorenniShort);
 
 const utentiSenior = utenti.filter (utente => utente.eta > 65);
 console.log("utenti senior", utentiSenior);
+
+ */
+
+
+
