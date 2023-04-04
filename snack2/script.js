@@ -78,6 +78,12 @@ return { nome, cognome , matricola, mediaVoti: media};
 console.log("media con destrutturazione",nuovaMedia);
 
 
+
+
+
+
+
+
 // stampo in pagina senza destrutturazione
 const risultatiContainer = document.getElementById ("risultati");
 
@@ -95,5 +101,26 @@ const risultatiHTML = studentiMedia.map ( studente =>
 risultatiContainer.innerHTML = risultatiHTML;
 
 
+
+
+
+
+
+
+//stampo in pagina con destrutturazione
+
+const risultatiContainer2 = document.getElementById("risultati2");
+
+const risultatiHTML2 = nuovaMedia.map (({ nome, cognome, matricola, mediaVoti })  => 
+  `
+  <div class="studente">
+    <p>Nome: ${nome}</p>
+    <p>Cognome: ${cognome}</p>
+    <p>Matricola: ${matricola}</p>
+    <p>Media voti: ${mediaVoti}</p>
+  </div>
+`).join("");
+
+risultatiContainer2.innerHTML = risultatiHTML2;
 
 
