@@ -30,7 +30,7 @@ voti: [24, 30, 28 ,25 ,26]},
 
 ]
 
-//calcolo media
+//calcolo media CON UNA FUNZIONE
 
 function calcolaMedia (voti){
 
@@ -47,19 +47,53 @@ return somma / voti.length;
 //con map creo un nuovo array con la media al posto 
 
 const studentiMedia = studenti.map ( function (studente){
+  const media = calcolaMedia(studente.voti);
+  
+  return {
+    nome: studente.nome ,
+    cognome: studente.cognome ,
+    matricola: studente.matricola ,
+    mediaVoti: media
+  
+  
+  }
+  
+  
+  })
+  
+  
+  console.log(studentiMedia);
+
+
+//rifaccio il calcolo usando la destrutturazione
+
+const nuovaMedia = studenti.map (function(studente){
+
 const media = calcolaMedia(studente.voti);
-
-return {
-  nome: studente.nome ,
-  cognome: studente.cognome ,
-  matricola: studente.matricola ,
-  mediaVoti: media
-
-
-}
+const { nome , cognome , matricola , voti} = studente;
+return { nome, cognome , matricola, mediaVoti: media};
 
 
 })
+console.log("media con destrutturazione",nuovaMedia);
 
 
-console.log(studentiMedia);
+// stampo in pagina senza destrutturazione
+const risultatiContainer = document.getElementById ("risultati");
+
+const risultatiHTML = studentiMedia.map ( studente =>
+ `
+  <div class="studente">
+    <p>Nome: ${studente.nome}</p>
+    <p>Cognome: ${studente.cognome}</p>
+    <p>Matricola: ${studente.matricola}</p>
+    <p>Media voti: ${studente.mediaVoti}</p>
+  </div>
+`).join("");
+  
+  
+risultatiContainer.innerHTML = risultatiHTML;
+
+
+
+
