@@ -47,6 +47,4 @@ const elencoBiciclette = document.getElementById("lista-bicicletta");
 const stampaBiciLeggera = `<p> ${nome } ha un peso di ${peso} kg ed e' la bicicletta piu leggera </p>`;
 
 
-elencoBiciclette.appendChild(stampaBiciLeggera)
-
-//elencoBiciclette.innerHTML = stampaBiciLeggera;
+elencoBiciclette.innerHTML = stampaBiciLeggera;

@@ -59,7 +59,7 @@ const squadreFalliDestrutturate = squadre.map (function({nome, falliSubiti}){
 const squadreDiv = document.getElementById("squadre");
 const listaSquadreFalli = `
   
-<h2>Ecco la lista aggiornata contenente il nome della squadra ed i falli subiti:</h2>
+<h1>Ecco la lista aggiornata contenente il nome della squadra ed i falli subiti:</h1>
   <ul>
     ${squadreFalli.map(squadra => `<li>${squadra.nome} - Falli subiti: ${squadra.falliSubiti}</li>`).join('')}
   </ul>
