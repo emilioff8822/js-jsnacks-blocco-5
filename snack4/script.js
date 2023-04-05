@@ -1,6 +1,6 @@
 /**
 Abbiamo un elenco degli studenti di una facoltà , identificati da _id_, _Nome_ e _somma totale_
-dei loro voti di esame
+dei loro voti di esame indicata con grades
 
 1. Per preparare l’aula di un nuovo corso, dobbiamo stampare le targhe col nome degli studenti:
 
@@ -27,4 +27,13 @@ NB: Si inverte l’ordine delle lezioni objects 3 e 2
 
 
 
+const studenti = [
+  { id: 213, nome: "Marco della Rovere", grades: 78 },
+  { id: 110, nome: "Paola Cortellessa", grades: 96 },
+  { id: 250, nome: "Andrea Mantegna", grades: 48 },
+  { id: 145, nome: "Gaia Borromini", grades: 74 },
+  { id: 196, nome: "Luigi Grimaldello", grades: 68 },
+  { id: 102, nome: "Piero della Francesca", grades: 50 },
+  { id: 120, nome: "Francesca da Polenta", grades: 84 },
+];
 
