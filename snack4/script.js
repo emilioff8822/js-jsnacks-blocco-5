@@ -37,3 +37,80 @@ const studenti = [
   { id: 120, nome: "Francesca da Polenta", grades: 84 },
 ];
 
+// lista con nome in masiuscolo utilizzando map
+
+const nomiMaiuscolo = studenti.map ( studente => studente.nome.toUpperCase ());
+
+console.log(nomiMaiuscolo);
+
+const nomiPagina = document.getElementById("nomi-maiuscolo");
+
+const nomiHtml = `<ul>Lista nomi Maiuscolo: ${nomiMaiuscolo}</ul> `;
+
+nomiPagina.innerHTML= nomiHtml;
+
+
+
+// filtro gli studenti con voto superiore a 70
+
+const studentiSopra70 = studenti.filter (studente => studente.grades >70);
+console.log( 'studenti sopra 70', studentiSopra70);
+
+const nomiStudentiSopra70 = studentiSopra70.map(studente => studente.nome);
+
+
+const nomisopra70 = document.getElementById("studenti-sopra-70");
+
+const sopra70Html = `ecco la lista degli studenti con voto superiore a 70 : ${studentiSopra70.map(studente => studente.nome)}`;
+
+nomisopra70.innerHTML =sopra70Html;
+
+
+
+// filtro studenti con voti superiori a 70
+
+
+const studentiSopra70IdSopra120 = studenti.filter (studente => studente.grades > 70 && studente.id >120);
+
+console.log("studenti con voto maggiore di 70 e id maggiore di 120", studentiSopra70IdSopra120);
+
+const nomisopra70120 = document.getElementById("studenti-sopra-70-id-sopra-120");
+const sopra70120Html = `ecco la lista degli studenti con voto superiore a 70 e id superiore a 120 : ${studentiSopra70IdSopra120.map(studente => studente.nome)}  `
+
+nomisopra70120.innerHTML = sopra70120Html;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* map estesa
+const nomiMaiuscolo = studenti.map(function(studente) {
+  return studente.nome.toUpperCase();
+});
+
+//filter estesa
+
+const studentiSopra70 = studenti.filter(function(studente) {
+  return studente.grades > 70;
+});
+console.log(studentiSopra70);
+
+const studentiSopra70IdSopra120 = studenti.filter(function(studente) {
+  return studente.grades > 70 && studente.id > 120;
+});
+console.log(studentiSopra70IdSopra120);
+*/
