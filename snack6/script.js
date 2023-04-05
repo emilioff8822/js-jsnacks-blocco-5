@@ -8,3 +8,62 @@ falli subiti e stampiamo tutto in console.
  
 stmapa in pagina
  */
+
+const squadre = [
+
+{nome: "Juventus" , puntiFatti:0 , falliSubiti: 0},
+{nome: "Inter" , puntiFatti:0 , falliSubiti: 0},
+{nome: "Milan" , puntiFatti:0 , falliSubiti: 0},
+{nome: "Roma" , puntiFatti:0 , falliSubiti: 0},
+{nome: "Napoli" , puntiFatti:0 , falliSubiti: 0},
+
+];
+
+// genero numeri random per i punti e i falli
+
+for (let i = 0; i<squadre.length; i++){
+
+  squadre[i].puntiFatti = Math.floor(Math.random () * 100 );
+  squadre[i].falliSubiti = Math.floor(Math.random () * 50 );
+
+}
+
+
+// uso map e creo un nuovo array che contien solo nomi e falli subiti
+
+const squadreFalli = squadre.map (function (squadra){
+
+  return{
+    nome: squadra.nome,
+    falliSubiti: squadra.falliSubiti
+
+
+  };
+
+});
+console.log(squadreFalli);
+
+// destrutturo
+const squadreFalliDestrutturate = squadre.map (function({nome, falliSubiti}){
+
+  return {nome, falliSubiti};
+
+
+});
+
+
+
+//stampo in  pagina
+
+
+const squadreDiv = document.getElementById("squadre");
+const listaSquadreFalli = `
+  
+<h2>Ecco la lista aggiornata contenente il nome della squadra ed i falli subiti:</h2>
+  <ul>
+    ${squadreFalli.map(squadra => `<li>${squadra.nome} - Falli subiti: ${squadra.falliSubiti}</li>`).join('')}
+  </ul>
+`;
+
+
+squadreDiv.innerHTML = listaSquadreFalli;
