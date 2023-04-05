@@ -85,7 +85,9 @@ console.log("media con destrutturazione",nuovaMedia);
 // stampo in pagina senza destrutturazione
 const risultatiContainer = document.getElementById ("risultati");
 
-const risultatiHTML = studentiMedia.map ( function (studente) { return `
+const risultatiHTML = studentiMedia.map ( function (studente) { 
+  
+   return `
 <div class="studente">
   <p>Nome: ${studente.nome}</p>
   <p>Cognome: ${studente.cognome}</p>

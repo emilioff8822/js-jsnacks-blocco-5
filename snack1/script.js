@@ -48,6 +48,7 @@ const elencoOver65 = document.getElementById("over65");
 //stampo minorenni
 
 let listaMinorenni = "";
+
 utentiMinorenni.forEach ( function (utente){
 listaMinorenni +=  ` <li> ${utente.nome} ${utente.cognome} , ${utente.eta} anni </li>`;
 
@@ -55,7 +56,7 @@ listaMinorenni +=  ` <li> ${utente.nome} ${utente.cognome} , ${utente.eta} anni 
 
 elencoMinorenni.innerHTML = listaMinorenni;
 
-// stampo maggiorenni
+// stampo maggiorenni con arrow
 
 let listaMaggiorenni = "";
 
